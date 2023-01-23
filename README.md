@@ -2,13 +2,37 @@
 [![Gem Version](https://badge.fury.io/rb/jekyll_hyphenate.svg)](https://badge.fury.io/rb/jekyll_hyphenate)
 ===========
 
-# *WORK IN PROGRESS*
-# *Nothing to see here yet, move along*
+##NB
+From the [W3 standard](https://www.w3.org/TR/css-text-3/#hyphenation):
+
+> Hyphenation occurs when the line breaks at a valid hyphenation opportunity, which is a type of soft wrap opportunity that exists within a word where hyphenation is allowed. In CSS hyphenation opportunities are controlled with the hyphens property. CSS Text Level 3 does not define the exact rules for hyphenation; however UAs are strongly encouraged to optimize their choice of break points and to chose language-appropriate hyphenation points.
+
+> hyphens
+Value:	none | manual | auto
+Initial:	manual
+
+... so just set `hyphens: auto` in the CSS for `body`, like this:
+
+```css
+  body {
+    hyphens: auto;
+  }
+```
+
+However:
+
+> Correct automatic hyphenation requires a hyphenation resource appropriate to the language of the text being broken. The UA must therefore only automatically hyphenate text for which the content language is known and for which it has an appropriate hyphenation resource.
+
+> Authors should correctly tag their content’s language (e.g. using the HTML lang attribute or XML xml:lang attribute) in order to obtain correct automatic hyphenation.
+
+
+# *WORK STOPPED AFTER I FOUND THE ABOVE*
 
 Jekyll Liquid filter to apply [Text::Hyphen][] to content
 contained within HTML tags that containing text.
 The tags to examine can be configured;
 the default tags to process are `a`, `li`, and `p`.
+
 
 ## Installation
 
