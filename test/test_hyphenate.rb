@@ -3,6 +3,7 @@ require 'bundler/setup'
 require_relative '../lib/jekyll_hyphenate/hyphenator'
 require 'test/unit'
 
+# Lets get this party started
 class TestHyphenate < Test::Unit::TestCase
   def normal_word?(text)
     Jekyll::HyphenateFilter::Hyphenator.normal_word?(text)

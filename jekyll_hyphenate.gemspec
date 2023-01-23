@@ -26,11 +26,10 @@ Gem::Specification.new do |spec|
   spec.require_path = %(lib)
   spec.required_ruby_version = '>= 2.6.0'
   spec.summary = 'Jekyll filter plugin for hyphenation.'
-  # spec.test_files = spec.files.grep %r{^(test|spec|features)/}
   spec.version = Jekyll::HyphenateFilter::VERSION
 
   spec.add_dependency 'jekyll', '>= 3.5.0'
-  spec.add_dependency 'jekyll_plugin_support', '>= 0.3.0'
-  spec.add_dependency 'nokogiri', '~> 1.4'
+  spec.add_dependency 'jekyll_plugin_logger'
+  spec.add_dependency 'nokogiri', '~> 1.14'
   spec.add_dependency 'text-hyphen'
 end
