@@ -29,7 +29,7 @@ module Jekyll
         fragment.css(@selector).each do |el|
           el.traverse do |node|
             _x = node.to_s
-            _y = node.to_html(encoding:'UTF-8')
+            _y = node.to_html(encoding: 'UTF-8')
             _z = hyphenate_text(node.to_s) if node.text?
             _a = node.content
             _b = hyphenate_text(node.to_s) if node.text?
