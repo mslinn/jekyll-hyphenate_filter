@@ -1,0 +1,41 @@
+AllCops:
+  Exclude:
+      - vendor/**/*
+      - exe/**/*
+      - Gemfile*
+      - Rakefile
+  NewCops: enable
+  TargetRubyVersion: 2.6
+
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 150
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - jekyll-hyphenate_filter.gemspec
+    - spec/jekyll-hyphenate_filter.rb
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false

@@ -1,12 +1,14 @@
-# `jekyll-hyphenate_filter`
-[![Gem Version](https://badge.fury.io/rb/jekyll-hyphenate_filter.svg)](https://badge.fury.io/rb/jekyll-hyphenate_filter)
+# `jekyll_hyphenate`
+[![Gem Version](https://badge.fury.io/rb/jekyll_hyphenate.svg)](https://badge.fury.io/rb/jekyll_hyphenate)
 ===========
 
 # *WORK IN PROGRESS*
 # *Nothing to see here yet, move along*
 
-Jekyll Liquid filter to apply [Text::Hyphen][] to content contained within HTML tags that containing text.
-The tags to examine can be configured; the default tags to process are `p` and `li`.
+Jekyll Liquid filter to apply [Text::Hyphen][] to content
+contained within HTML tags that containing text.
+The tags to examine can be configured;
+the default tags to process are `a`, `li`, and `p`.
 
 ## Installation
 
@@ -14,7 +16,7 @@ Add this line to your Jekyll project's Gemfile, within the `jekyll_plugins` grou
 
 ```ruby
 group :jekyll_plugins do
-  gem 'jekyll-hyphenate_filter'
+  gem 'jekyll_hyphenate'
 end
 ```
 
@@ -33,7 +35,7 @@ To hyphenate content, use the filter like this:
 ## Configuration
 
 There are a few configurable parameters which control hyphenation behavior.
-These parameters are `language`, `left`, and `right`. These take the same
+These parameters are `language`, `left`, `right` and `tags`. These take the same
 values as [Text::Hyphen][]. In brief:
 
  * `language` - language of the content. Defaults to `en_us`.
@@ -41,6 +43,7 @@ values as [Text::Hyphen][]. In brief:
    Defaults to 2.
  * `right` - minimum number of characters to the right of the hyphen.
    Defaults to 2.
+* `tags` - HTML tags to process. Defaults are `a`, `p`, and `li`.
 
 In addition, you can specify the string used to indicate hyphenation points
 with the `hyphen` parameter. The default is the UTF-8 soft-hyphen character
@@ -53,7 +56,7 @@ You can update `_config.yml` to set these parameters. For example:
       left: 4
       right: 3
       hyphen: "&shy;"
-      tags: p,li
+      tags: a,li,p
 
 This configuration sets the language to UK English, with a minimum of 4
 characters to the left of the hyphenation, minimum 3 characters to the right,
@@ -78,14 +81,12 @@ More information is available on
 
 
 ## New Implementation
-
-This plugin is meant as a drop-in replacement for the abandoned [`grzm/jekyll-hyphenate_filter`](http://github.com/grzm/jekyll-hyphenate_filter) Jekyll filter.
+This plugin is meant as a replacement for the abandoned [`grzm/jekyll_hyphenate`](http://github.com/grzm/jekyll_hyphenate) Jekyll filter.
 It directly calls the [`rubygems.org/gems/text-hyphen`](https://rubygems.org/gems/text-hyphen) Ruby gem.
 
-For continuity, the gem built has the same name.
 This will be a new implementation,
 not based on [Jekyll::HyphenateFilter](https://github.com/aucor/jekyll-plugins/blob/master/hyphenate.rb) from [Jekyll plugins by Aucor](https://github.com/aucor/jekyll-plugins),
-but upward compatible with `grzm/jekyll-hyphenate_filter`.
+but (mostly?) upward compatible with `grzm/jekyll_hyphenate`.
 
 
 ## Development
@@ -97,20 +98,19 @@ You can also run `bin/console` for an interactive prompt that will allow you to 
 To build and install this gem onto your local machine, run:
 ```shell
 $ bundle exec rake install
-jekyll-hyphenate_filter 0.1.0 built to pkg/jekyll-hyphenate_filter-0.1.0.gem.
-jekyll-hyphenate_filter (0.1.0) installed.
+jekyll_hyphenate 0.1.0 built to pkg/jekyll_hyphenate-0.1.0.gem.
+jekyll_hyphenate (0.1.0) installed.
 ```
 
 Examine the newly built gem:
 ```shell
-$ gem info jekyll-hyphenate_filter
+$ gem info jekyll_hyphenate
 
 *** LOCAL GEMS ***
 
-jekyll-hyphenate_filter (0.1.0)
+jekyll_hyphenate (0.1.0)
     Author: Mike Slinn
-    Author: Michael Glaesemann
-    Homepage: https://github.com/mslinn/jekyll-hyphenate_filter
+    Homepage: https://github.com/mslinn/jekyll_hyphenate
     License: MIT
     Installed at: /home/mslinn/.gems
 
@@ -120,6 +120,5 @@ jekyll-hyphenate_filter (0.1.0)
 
 ## Copyright
 
-- Portions Copyright 2023 Michael Slinn.
-- Portions Copyright 2016 Michael Glaesemann.
+- Copyright 2023 Michael Slinn.
 - Released under the MIT License (see LICENSE for details).

@@ -1,9 +1,9 @@
-require_relative "hyphenate_filter/hyphenator"
+require_relative "hyphenator"
 
 module Jekyll
-  module HyphenateFilter
+  module Hyphenate
     def hyphenate(content)
-      config = @context.registers[:site].config['hyphenate_filter'] || {}
+      config = @context.registers[:site].config['hyphenate'] || {}
       config = {'language' => 'en_us',
                 'left' => 2,
                 'right' => 2,
@@ -19,4 +19,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_filter(Jekyll::HyphenateFilter)
+Liquid::Template.register_filter(Jekyll::Hyphenate)
