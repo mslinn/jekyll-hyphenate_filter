@@ -4,7 +4,7 @@ require_relative '../lib/hyphenator'
 # Lets get this party started
 class HyphenateTest # rubocop:disable Metrics/ClassLength
   def self.normal_word?(text)
-    Jekyll::HyphenateFilter::Hyphenator.normal_word?(text)
+    Jekyll::Hyphenate::Hyphenator.normal_word?(text)
   end
 
   RSpec.describe Jekyll::Hyphenate do
@@ -12,7 +12,7 @@ class HyphenateTest # rubocop:disable Metrics/ClassLength
       { 'language' => 'en_us',
         'left' => 2,
         'right' => 2,
-        'hyphen' => Hyphenator::SOFT_HYPHEN_ENTITY,
+        'hyphen' => Jekyll::Hyphenate::Hyphenator::SOFT_HYPHEN_ENTITY,
         'selector' => 'p' }
     end
 
@@ -84,7 +84,7 @@ class HyphenateTest # rubocop:disable Metrics/ClassLength
     end
 
     it 'hyphenates without sub-elements' do
-      hyphenated = Jekyll::HyphenateFilter::Hyphenator.new.hyphenate(html_entities)
+      hyphenated = Jekyll::Hyphenate::Hyphenator.new(config).hyphenate(html_entities)
       expect(hyphenated).to match_ignoring_whitespace <<-END_RESULT
         <p>
           The ampersand character is: &amp;, and here is a &lt;tag&gt;.
@@ -94,7 +94,7 @@ class HyphenateTest # rubocop:disable Metrics/ClassLength
     end
 
     it 'hyphenates with sub-elements' do
-      hyphenated = Jekyll::HyphenateFilter::Hyphenator.new.hyphenate(html_link)
+      hyphenated = Jekyll::Hyphenate::Hyphenator.new(config).hyphenate(html_link)
       expect(hyphenated).to match_ignoring_whitespace <<-END_RESULT
         <p>
           Jekyll becomes useful when
@@ -106,7 +106,7 @@ class HyphenateTest # rubocop:disable Metrics/ClassLength
     end
 
     it 'hyphenates with img sub-elements' do
-      hyphenated = Jekyll::HyphenateFilter::Hyphenator.new.hyphenate(html_img)
+      hyphenated = Jekyll::Hyphenate::Hyphenator.new(config).hyphenate(html_img)
       expect(hyphenated).to match_ignoring_whitespace <<-END_RESULT
         <div class="imgWrapper inline imgItem">
           <figure>

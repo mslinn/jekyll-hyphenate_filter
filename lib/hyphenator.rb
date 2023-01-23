@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'text/hyphen'
 
 module Jekyll
-  module HyphenateFilter
+  module Hyphenate
     # Lets get this party started
     class Hyphenator
       SOFT_HYPHEN_CHAR = "\u00ad".freeze
