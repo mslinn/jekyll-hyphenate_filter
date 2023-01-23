@@ -5,10 +5,41 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "rdbg",
-      "name": "Debug test_hyphenate",
+      "cwd": "${workspaceRoot}",
+      "name": "Attach rdebug-ide",
+      "request": "attach",
+      "remoteHost": "localhost",
+      "remotePort": "1234",
+      "remoteWorkspaceRoot": "/",
+      "showDebuggerOutput": true,
+      "type": "Ruby",
+    },
+    {
+      "args": [
+        "-I",
+        "${workspaceRoot}"
+      ],
+      "cwd": "${workspaceRoot}",
+      "name": "RSpec - all",
+      "program": "${workspaceRoot}/exe/rspec",
       "request": "launch",
-      "script": "test/test_hyphenate.rb",
+      "showDebuggerOutput": false,
+      "type": "Ruby",
+      "useBundler": true,
+    },
+    {
+      "args": [
+        "-I",
+        "${workspaceRoot}",
+        "${file}"
+      ],
+      "cwd": "${workspaceRoot}",
+      "name": "RSpec - active spec file only",
+      "program": "${workspaceRoot}/exe/rspec",
+      "request": "launch",
+      "showDebuggerOutput": false,
+      "type": "Ruby",
+      "useBundler": true,
     }
   ]
 }

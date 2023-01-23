@@ -44,6 +44,9 @@ Naming/FileName:
   Exclude:
     - rakefile
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
