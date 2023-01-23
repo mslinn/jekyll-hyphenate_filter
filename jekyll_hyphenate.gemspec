@@ -1,6 +1,6 @@
 require_relative 'lib/jekyll_hyphenate/version'
 
-Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
+Gem::Specification.new do |spec|
   github = 'https://github.com/mslinn/jekyll_hyphenate'
 
   spec.authors = ['Mike Slinn']
@@ -26,20 +26,11 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.require_path = %(lib)
   spec.required_ruby_version = '>= 2.6.0'
   spec.summary = 'Jekyll filter plugin for hyphenation.'
-  spec.test_files = spec.files.grep %r{^(test|spec|features)/}
+  # spec.test_files = spec.files.grep %r{^(test|spec|features)/}
   spec.version = Jekyll::HyphenateFilter::VERSION
 
   spec.add_dependency 'jekyll', '>= 3.5.0'
   spec.add_dependency 'jekyll_plugin_support', '>= 0.3.0'
   spec.add_dependency 'nokogiri', '~> 1.4'
   spec.add_dependency 'text-hyphen'
-
-  # spec.add_development_dependency 'debase'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rspec-match_ignoring_whitespace'
-  spec.add_development_dependency 'rubocop'
-  # spec.add_development_dependency 'rubocop-jekyll'
-  spec.add_development_dependency 'rubocop-rake'
-  spec.add_development_dependency 'rubocop-rspec'
-  spec.add_development_dependency 'ruby-debug-ide'
 end

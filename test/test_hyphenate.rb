@@ -62,28 +62,27 @@ class TestHyphenate < Test::Unit::TestCase
   end
 
   def test_nested
-    content = <<-EOS
-<ul>
-  <li>
-    <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=100" title="Tropashko on nested intervals">Trees in SQL: Nested Sets and Materialized Path</a></cite></p>
-  </li>
-  <li>
-    <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=200" title="Tropashko on relocating subtrees of nested intervals">Relocating Subtrees in Nested Intervals Model</a></cite></p>
-  </li>
-</ul>
-EOS
-    expected = <<-EOS
-<ul>
-  <li>
-    <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=100" title="Tropashko on nested intervals">Trees in SQL: Nested Sets and Mate­ri­al­ized Path</a></cite></p>
-  </li>
-  <li>
-    <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=200" title="Tropashko on relocating subtrees of nested intervals">Relo­cat­ing Sub­trees in Nested Inter­vals Model</a></cite></p>
-  </li>
-</ul>
-EOS
-    hyphenated = Jekyll::HyphenateFilter::Hyphenator.new(selector: "p").hyphenate(content)
+    content = <<~END_CONTENT
+      <ul>
+        <li>
+          <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=100" title="Tropashko on nested intervals">Trees in SQL: Nested Sets and Materialized Path</a></cite></p>
+        </li>
+        <li>
+          <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=200" title="Tropashko on relocating subtrees of nested intervals">Relocating Subtrees in Nested Intervals Model</a></cite></p>
+        </li>
+      </ul>
+      EOS
+          expected = <<-EOS
+      <ul>
+        <li>
+          <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=100" title="Tropashko on nested intervals">Trees in SQL: Nested Sets and Mate­ri­al­ized Path</a></cite></p>
+        </li>
+        <li>
+          <p>Vadim Tropashko, <cite><a href="https://example.com/path/to/article?id=200" title="Tropashko on relocating subtrees of nested intervals">Relo­cat­ing Sub­trees in Nested Inter­vals Model</a></cite></p>
+        </li>
+      </ul>
+    END_CONTENT
+    hyphenated = Jekyll::HyphenateFilter::Hyphenator.new(selector: 'p').hyphenate(content)
     assert_equal(expected, hyphenated)
   end
-
 end
