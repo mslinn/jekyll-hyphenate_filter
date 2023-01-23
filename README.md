@@ -110,8 +110,7 @@ $ gem info jekyll-hyphenate_filter
 jekyll-hyphenate_filter (0.1.0)
     Author: Mike Slinn
     Author: Michael Glaesemann
-    Homepage:
-    https://github.com/mslinn/jekyll-hyphenate_filter
+    Homepage: https://github.com/mslinn/jekyll-hyphenate_filter
     License: MIT
     Installed at: /home/mslinn/.gems
 
