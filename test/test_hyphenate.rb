@@ -5,10 +5,18 @@ require_relative "../lib/jekyll/hyphenate_filter/hyphenator"
 require "test/unit"
 
 class TestHyphenate < Test::Unit::TestCase
+  def normal_word?(text)
+    Jekyll::HyphenateFilter::Hyphenator.normal_word?(text)
+  end
+
+  def test_normal_word
+    assert_equal(true,  normal_word?('<p>Fred</p>'))
+    assert_equal(false, normal_word?('<p>&amp;</p>'))
+  end
 
   def test_no_sub_elements
     content = <<-EOS
-    <p>The nested set however, has performance limitations on insert, update, and
+    <p>The &amp; &amp;lt;nested&amp;gt; however, has performance limitations on insert, update, and
 delete. This arises because the nested set model encodes the hierarchy based on
 what the set contains: when a node is inserted or deleted, all of the sets
 containing the node must be updated as well. In other words, the encoding
@@ -16,7 +24,7 @@ depends on the current state of the database. This behavior makes the nested set
 model less desirable for large, dynamic hierarchies. There are limitations</p>
     EOS
     expected = <<-EOS
-    <p>The nested set how­ev­er, has per­for­mance lim­i­ta­tions on insert, update, and
+    <p>The &amp; &lt;nested&gt; set how­ev­er, has per­for­mance lim­i­ta­tions on insert, update, and
 delete. This arises because the nested set model encodes the hier­ar­chy based on
 what the set con­tains: when a node is inserted or delet­ed, all of the sets
 con­tain­ing the node must be updated as well. In other words, the encod­ing
@@ -71,5 +79,5 @@ EOS
     hyphenated = Jekyll::HyphenateFilter::Hyphenator.new(selector: "p").hyphenate(content)
     assert_equal(expected, hyphenated)
   end
-  
+
 end

@@ -8,16 +8,16 @@ Gem::Specification.new do |spec|
   spec.version = Jekyll::HyphenateFilter::VERSION
   spec.licenses = ["MIT"]
   spec.summary = "jekyll-hyphenate_filter"
-  spec.date = "2016-05-01"
-  spec.description = "Jekyll Hyphenation Filter"
-  spec.authors = ["Michael Glaesemann"]
-  spec.email = ["grzm@seespotcode.net"]
+  spec.date = "2023-01-22"
+  spec.description = "Jekyll filter plugin for hyphenation."
+  spec.authors = ["Mike Slinn", "Michael Glaesemann"]
+  spec.email = ["mslinn@mslinn.com", "grzm@seespotcode.net"]
   spec.files = FileList["{lib,test}/**/*.*",
                         "jekyll-hyphenate_filter.gemspec",
                         "rakefile",
                         "LICENSE",
-                        "README.markdown",
-                        "CHANGELOG.markdown",
+                        "README.md",
+                        "CHANGELOG.md",
                         "Gemfile",
                         "Gemfile.lock"].to_a
   spec.require_path = %(lib)
