@@ -80,12 +80,12 @@ More information is available on
 ## New Implementation
 
 This plugin is meant as a drop-in replacement for the abandoned [`grzm/jekyll-hyphenate_filter`](http://github.com/grzm/jekyll-hyphenate_filter) Jekyll filter.
+It directly calls the [`rubygems.org/gems/text-hyphen`](https://rubygems.org/gems/text-hyphen) Ruby gem.
 
 For continuity, the gem built has the same name.
 This will be a new implementation,
-not based on [Jekyll::HyphenateFilter][] from [Jekyll plugins by Aucor][aucor-jekyll-plugins],
+not based on [Jekyll::HyphenateFilter](https://github.com/aucor/jekyll-plugins/blob/master/hyphenate.rb) from [Jekyll plugins by Aucor](https://github.com/aucor/jekyll-plugins),
 but upward compatible with `grzm/jekyll-hyphenate_filter`.
-It directly calls the [`rubygems.org/gems/text-hyphen`](https://rubygems.org/gems/text-hyphen) Ruby gem.
 
 
 ## Development
