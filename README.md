@@ -6,18 +6,7 @@
 # *Nothing to see here yet, move along*
 
 Jekyll Liquid filter to apply [Text::Hyphen][] to content contained within HTML tags that containing text.
-The tags to examine can be configured; the default tags to prorcess are `p` and `li`.
-
-[text::hyphen]: https://github.com/halostatue/text-hyphen
-
-See [demo/index.html](demo/index.html) for examples.
-
-Run the demo website by typing:
-```shell
-$ demo/_bin/debug -r
-```
-... and point your web browser to http://localhost:4444
-
+The tags to examine can be configured; the default tags to process are `p` and `li`.
 
 ## Installation
 
@@ -71,6 +60,18 @@ characters to the left of the hyphenation, minimum 3 characters to the right,
 and the HTML entity `&shy;` to indicate hyphenation points.
 
 
+## Demo
+[text::hyphen]: https://github.com/halostatue/text-hyphen
+
+See [demo/index.html](demo/index.html) for examples.
+
+Run the demo website by typing:
+```shell
+$ demo/_bin/debug -r
+```
+... and point your web browser to http://localhost:4444
+
+
 ## Additional Information
 More information is available on
 [Mike Slinn&rsquo;s website](https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html).
@@ -78,8 +79,9 @@ More information is available on
 
 ## New Implementation
 
-This is meant as a drop-in replacement for the abandoned [`grzm/jekyll-hyphenate_filter`](http://github.com/grzm/jekyll-hyphenate_filter) Jekyll filter.
+This plugin is meant as a drop-in replacement for the abandoned [`grzm/jekyll-hyphenate_filter`](http://github.com/grzm/jekyll-hyphenate_filter) Jekyll filter.
 
+For continuity, the gem built has the same name.
 This will be a new implementation,
 not based on [Jekyll::HyphenateFilter][] from [Jekyll plugins by Aucor][aucor-jekyll-plugins],
 but upward compatible with `grzm/jekyll-hyphenate_filter`.
@@ -119,6 +121,6 @@ jekyll-hyphenate_filter (0.1.0)
 
 ## Copyright
 
-Portions Copyright 2023 Michael Slinn.
-Portions Copyright 2016 Michael Glaesemann.
-Released under the MIT License (see LICENSE for details).
+- Portions Copyright 2023 Michael Slinn.
+- Portions Copyright 2016 Michael Glaesemann.
+- Released under the MIT License (see LICENSE for details).
