@@ -2,6 +2,9 @@
 [![Gem Version](https://badge.fury.io/rb/jekyll_hyphenate.svg)](https://badge.fury.io/rb/jekyll_hyphenate)
 ===========
 
+See [my blog post](https://www.mslinn.com/blog/2023/01/23/html-hyphen.html) for a way to hyphenate text in Jekyll pages, and all other HTML documents.
+
+
 ##NB
 From the [W3 standard](https://www.w3.org/TR/css-text-3/#hyphenation):
 
